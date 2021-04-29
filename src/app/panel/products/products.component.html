@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-8">
+        <h3>Productos: 
+            <strong>{{category.categoria}}</strong> 
+        </h3>
+    </div>
+    <div class="col-md-4"  *ngIf="user.id_rol == 1">
+        <button mat-raised-button color="primary" type="button" (click)="openDialog()" style="width: 100%;">Agregar</button>
+    </div>
+    <div class="col-md-12">
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>producto</th>
+                    <th>precio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of sendData">
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.nombre }}</td>
+                    <td>{{ row.precio | currency }}</td>
+                    <td>
+                        <mat-checkbox  [checked]="row.estado" color="primary"  [(ngModel)]="row.estado"  (ngModelChange)="checkProduct()"></mat-checkbox>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <hr>
+    <mat-card class="example-card">
+        <mat-card-content>
+            <form>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label>SubTotalt</label>
+                        <div class="form-control">
+                            {{subTotal | currency}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>IVA</label>
+                        <div class="form-control">
+                            {{totaIva | currency}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Total</label>
+                        <div class="form-control">
+                            {{total | currency}}
+                        </div>
+                    </div>
+                </div> 
+                <hr>
+                <div class="form-group row">
+                    <button mat-raised-button color="primary" type="button" (click)="save()">Guardar</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

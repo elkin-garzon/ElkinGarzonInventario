@@ -1,0 +1,46 @@
+{
+  "roles": [
+    {
+      "rol": "Admin",
+      "id": 1
+    },
+    {
+      "rol": "User",
+      "id": 2
+    }
+  ],
+  "login": [
+    {
+      "email": "user@example.com",
+      "password": "123456789",
+      "id_rol": 2
+    },
+    {
+      "email": "admin@example.com",
+      "password": "123456789",
+      "id_rol": 1
+    }
+  ],
+  "categorias": [
+    {
+      "categoria": "prueba",
+      "id": 1
+    }
+  ],
+  "productos": [
+    {
+      "nombre": "producto 1",
+      "id_categoria": 1,
+      "precio": 1000,
+      "estado": false,
+      "id": 1
+    },
+    {
+      "nombre": "prueba 2",
+      "id_categoria": 1,
+      "precio": 1235,
+      "estado": false,
+      "id": 2
+    }
+  ]
+}
